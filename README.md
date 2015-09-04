@@ -5,4 +5,4 @@ time spent: an hour and half for required functionalities, another hour to clean
 
 required: User can enter a bill amount, choose a tip percentage, and see the tip and total values, Settings page to change the default tip percentage.
 
-GIF walkthrough of all required and optional stories (using LiceCap)
+![tips gif](https://github.com/hinasakazaki/tipcalculator/blob/master/tips.gif)
