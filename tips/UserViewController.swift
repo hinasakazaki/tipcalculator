@@ -23,13 +23,13 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if (defaults.objectForKey("def") != nil){
-            defaultTipPerc.text = String(format: "%.0f%%", defaults.doubleForKey("def"))
+            defaultTipPerc.text = String(format: "%.0f", defaults.doubleForKey("def"))
         }
         if (defaults.objectForKey("min") != nil){
-            minTipPerc.text = String(format: "%.0f%%", defaults.doubleForKey("min"))
+            minTipPerc.text = String(format: "%.0f", defaults.doubleForKey("min"))
         }
         if (defaults.objectForKey("max") != nil){
-            defaultTipPerc.text = String(format: "%.0f%%", defaults.doubleForKey("max"))
+            defaultTipPerc.text = String(format: "%.0f", defaults.doubleForKey("max"))
         }
         // Do any additional setup after loading the view.
     }
@@ -39,7 +39,6 @@ class UserViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     @IBAction func OnBackTap(sender: AnyObject) {
         defaults.synchronize()
         dismissViewControllerAnimated(true, completion: nil)
@@ -54,6 +53,10 @@ class UserViewController: UIViewController {
     }
     */
 
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing((true))
+    }
+    
     @IBAction func onMaxChanged(sender: AnyObject) {
         defaults.setDouble((maxTipPerc.text as NSString).doubleValue, forKey: "max")
     }
